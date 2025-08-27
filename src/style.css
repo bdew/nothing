@@ -50,7 +50,7 @@ body {
 #msg {
   font-family: monospace;
   font-weight: bold;
-  font-size: 72px;
+  font-size: calc(min(72px, 5vw));
   text-align: center;
   color: #800;
   text-shadow: 0 0 3px rgba(128, 0, 0, 0.15);
