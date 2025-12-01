@@ -5,7 +5,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 RUN yarn build
 
-FROM docker.io/joseluisq/static-web-server:2.39.0
+FROM docker.io/joseluisq/static-web-server:2.40.0
 USER 1000
 WORKDIR /var/www
 COPY --from=builder /app/dist .
