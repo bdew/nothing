@@ -1,17 +1,17 @@
+import { defineConfig, globalIgnores } from "eslint/config";
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import { globalIgnores } from "eslint/config";
 import stylistic from "@stylistic/eslint-plugin";
 
-export default tseslint.config([
+const eslintConfig = defineConfig([
   globalIgnores(["dist"]),
   {
     files: ["**/*.{ts,tsx,js,jsx}"],
     extends: [
       js.configs.recommended,
       tseslint.configs.recommended,
-      stylistic.configs["recommended"],
+      stylistic.configs.recommended,
       {
         rules: {
           "eqeqeq": "error",
@@ -45,3 +45,5 @@ export default tseslint.config([
     },
   },
 ]);
+
+export default eslintConfig;
