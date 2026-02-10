@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 COPY . .
+RUN yarn lint
 RUN yarn build
 
 FROM docker.io/joseluisq/static-web-server:2.40.0
