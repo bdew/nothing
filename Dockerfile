@@ -6,7 +6,7 @@ COPY . .
 RUN yarn lint
 RUN yarn build
 
-FROM docker.io/joseluisq/static-web-server:2.44.0
+FROM docker.io/joseluisq/static-web-server:2.44.1
 USER 1000
 WORKDIR /var/www
 COPY --from=builder /app/dist .
